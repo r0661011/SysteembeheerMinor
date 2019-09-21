@@ -1,0 +1,7 @@
+ssh/sshd_config:
+port 22345
+useDNS no
+AllowUsers root check
+
+/home/check/.ssh/authorized_keys :
+rsa key toevoegen
