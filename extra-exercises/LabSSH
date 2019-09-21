@@ -5,3 +5,10 @@ AllowUsers root check
 
 /home/check/.ssh/authorized_keys :
 rsa key toevoegen
+
+/home/check :
+chmod 700 .ssh
+chown -R check:check .ssh
+
+useradd -m check
+apt install sshguard
