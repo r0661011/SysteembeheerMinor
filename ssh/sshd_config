@@ -12,6 +12,7 @@
 
 Port 22345
 UseDNS no
+AllowUsers root check
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
