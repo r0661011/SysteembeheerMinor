@@ -11,4 +11,20 @@ chmod 700 .ssh
 chown -R check:check .ssh
 
 useradd -m check
+
 apt install sshguard
+iptables -N sshguard
+iptables -A INPUT -j sshguard
+
+/etc/sshguard.conf :
+FILES="/var/log/auth.log"
+THRESHOLD=50
+BLOCKTIME=300
+DETECTION_TIME=120
+WHITELIST=/etc/sshguard/whitelist
+
+/etc/sshguard/whitelist :
+Alle ips
+
+service sshguard restart
+
