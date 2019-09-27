@@ -16,12 +16,9 @@ apt install sshguard
 iptables -N sshguard
 iptables -A INPUT -j sshguard
 
-/etc/sshguard.conf :
-FILES="/var/log/auth.log"
-THRESHOLD=50
-BLOCKTIME=300
-DETECTION_TIME=120
-WHITELIST=/etc/sshguard/whitelist
+/etc/default/sshguard :
+ARGS="-a 50 -p 300 -s 120"
+LOGFILES="/var/log/auth.log"
 
 /etc/sshguard/whitelist :
 Alle ips
